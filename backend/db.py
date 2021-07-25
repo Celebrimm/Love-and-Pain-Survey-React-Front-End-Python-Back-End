@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 import flask_sqlalchemy
 
 # MySQL configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Airsoft9124!@localhost/pain_scale'
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 db = SQLAlchemy(app)
 Base = automap_base()
