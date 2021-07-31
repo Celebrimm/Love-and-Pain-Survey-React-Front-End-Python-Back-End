@@ -1,7 +1,7 @@
 import React from "react";
 function ResultInfo() {
   return (
-    <h2>
+    <h2 className="result-info">
       The purpose of this experiment is to see if people who take the love
       questions before the pain questions (Version: Love and Pain) are going to
       answer more prudently when answering questions in the pain portion of the
@@ -23,3 +23,4 @@ function ResultInfo() {
   );
 }
 export default ResultInfo;
+

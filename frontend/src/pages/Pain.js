@@ -3,17 +3,19 @@ import QuestionBox from "../components/QuestionBox";
 import SubmitButton from "../components/SubmitButton";
 import Title from "../components/Title";
 import History from "../services/History";
+import uri from "../services/URI"
 
 class Pain extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { questionsAndanswers: [], data: {} };
+    this.state = { questionsAndanswers: [], data: {}, title:false };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    fetch("http://127.0.0.1:5000/pain")
+    
+    fetch(uri + 'get_pain')
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -33,17 +35,17 @@ class Pain extends React.Component {
   allowSubmit() {
     if (
       Object.keys(this.state.data).length ===
-      Object.keys(this.state.questionsAndanswers).length
+      Object.keys(this.state.questionsAndanswers).length && Object.keys(this.state.questionsAndanswers).length>0
     ) {
       return true;
     } else {
-      alert("Please answer all the questions before submitting");
+      return false
     }
   }
   handleSubmit(event) {
     event.preventDefault();
     if (this.allowSubmit()) {
-      fetch("http://127.0.0.1:5000/results ", {
+      fetch(uri + "post_results", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -65,9 +67,9 @@ class Pain extends React.Component {
     // const { questionsAndanswers } = this.state;
 
     return (
-      <header className="container">
-        <div>
-          <Title welcomeText={false} />
+      <div>
+        <div className="container">
+          <Title welcomeText={this.state.title} />
           <ul className="ulremovebullets">
             {this.state.questionsAndanswers.map(({ question, answers }) => (
               <QuestionBox
@@ -78,9 +80,11 @@ class Pain extends React.Component {
               />
             ))}
           </ul>
-          <SubmitButton handleSubmit={this.handleSubmit} />
+          
         </div>
-      </header>
+        <SubmitButton handleSubmit={this.handleSubmit} title={this.state.title}allowSubmit={this.allowSubmit()} />
+      </div>
+      
     );
   }
 }

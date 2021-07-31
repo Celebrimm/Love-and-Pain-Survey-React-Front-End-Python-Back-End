@@ -16,7 +16,7 @@ class Title extends React.Component {
           </div>
           <h2 className="info">
             Welcome! You have been chosen to participate in an survey
-            experiment. Thank you for your participation!
+            experiment. After answering all the questions a submit button will appear at the bottom of the screen. Thank you for your participation!
           </h2>
         </>
       );
@@ -29,7 +29,7 @@ class Title extends React.Component {
           <h2 className="info">
             Welcome! You have been chosen to participate in an survey
             experiment. From questions two to fifteen, answer choices range from
-            (1) Not at all true to (9) Definitely true. Thank you for your
+            (1) Not at all true to (9) Definitely true. After answering all the questions a submit button will appear at the bottom of the screen. Thank you for your
             participation!
           </h2>
         </>

@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "../components/Chart";
 import ResultInfo from "../components/ResultInfo";
+import uri from "../services/URI"
 
 class Results extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Results extends React.Component {
     };
   }
   fetchResults = () => {
-    fetch("http://127.0.0.1:5000/results")
+    fetch(uri + "results")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -19,7 +20,7 @@ class Results extends React.Component {
       });
   };
   componentDidMount() {
-    fetch("http://127.0.0.1:5000/get_results")
+    fetch(uri + "get_results")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -29,10 +30,17 @@ class Results extends React.Component {
   }
   render() {
     return (
-      <div className="result-info">
-        <Chart data={this.state.data}></Chart>
-        <ResultInfo />
+      <>
+      <div class="font-effect-fire-animation">
+      <h1 className="title" > Results</h1>
       </div>
+      
+      <div className="result-page" >
+        <Chart data={this.state.data} className="result-page"></Chart>
+        </div>
+        <ResultInfo />
+      
+      </>
     );
   }
 }

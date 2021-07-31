@@ -8,11 +8,14 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 import flask_sqlalchemy
+from sqlalchemy.pool import QueuePool
 
 # MySQL configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Airsoft9124!@localhost/pain_scale'
 
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'Your DB config'
+app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping": True}
 db = SQLAlchemy(app)
+
 Base = automap_base()
 Base.prepare(db.engine, reflect=True)
 session = Session(db.engine)

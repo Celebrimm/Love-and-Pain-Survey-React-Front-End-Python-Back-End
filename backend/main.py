@@ -7,10 +7,18 @@ import Providers.result_provider as result_provider
 from Providers import questions_provider
 from Providers import questionnaire_provider
 from Providers import pain_provider
+
+import os
 from db import db
 
 
-@app.route('/results', methods=['POST'])
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')    
+@app.route('/post_results', methods=['POST'])
 def post_results():
     """
     Get json data from the user's request.
@@ -37,7 +45,7 @@ def get_all_questions():
 def get_questionnaire():
     return questionnaire_provider.get_questionnaire()
 
-@app.route('/pain', methods=['GET'])
+@app.route('/get_pain', methods=['GET'])
 def get_pain():
     return pain_provider.get_pain()
 
@@ -47,6 +55,7 @@ def get_results():
 
 
 if __name__ == "__main__":
+    
     app.run()
     
 

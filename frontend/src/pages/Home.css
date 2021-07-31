@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Bilbo&effect=fire-animation");
+@import url("https://fonts.googleapis.com/css?family=Festive");
+@import url("https://fonts.googleapis.com/css?family=Yomogi");
+@import url("https://fonts.googleapis.com/css?family=Tourney");
+@import url("https://fonts.googleapis.com/css?family=Playfair Display");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 .Home .lander {
     padding: 80px 0;
     text-align: center;
@@ -10,4 +17,75 @@
 
 .lander p {
     color: #999;
+}
+.Homecontainer{
+    position: relative;
+    background-color: rgb(189, 60, 60);
+    color: rgb(255, 255, 255);
+    padding: 140px;
+    font-size: 1.8em;
+    
+  
+    font-family: "Bilbo";
+}
+.Homewelcome{
+    position: relative;
+    background-color: rgb(189, 60, 60);
+    color: rgb(255, 255, 255);
+    
+    font-size: 1.3em;
+    text-align: center;
+    padding: 50px;
+  
+    font-family: "Bilbo";
+
+}
+
+.painbutton{
+    font-size: .50em;
+    padding: 25px;
+    top: 70px;
+    background-color: rgb(139, 33, 18);
+  color: rgb(242, 240, 245);
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: 15px;
+    outline: none;
+    cursor: pointer;
+    font-family: "Playfair Display";
+    white-space: normal;
+    word-wrap: break-word;
+    border-radius: 10px;
+
+}
+.loveandpainbutton{
+    font-size: .50em;
+    padding: 25px;
+    top: 25px;
+    background-color: rgb(139, 33, 18);
+  color: rgb(242, 240, 245);
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: "Playfair Display";
+    white-space: pre-line;
+    word-wrap: normal;
+    border-radius: 10px;
+
+}
+.loveandpainbuttonpos{
+    position:static;
+    transition: .5s ease;
+    margin-top : 25px
+    
+}
+.painbuttonpos{
+    position:right;
+    transition: .5s ease;
+    
+
 }

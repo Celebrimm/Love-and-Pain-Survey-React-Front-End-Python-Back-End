@@ -3,7 +3,10 @@ import QuestionBox from "../components/QuestionBox";
 import SubmitButton from "../components/SubmitButton";
 import Title from "../components/Title";
 import History from "../services/History";
-import Results from "../pages/Results.js";
+import FirstLoveQuestionInput from "../components/FirstLoveQuestionInput";
+
+import uri from "../services/URI";
+
 class LoveAndPain extends React.Component {
   constructor(props) {
     super(props);
@@ -11,13 +14,17 @@ class LoveAndPain extends React.Component {
       questionsAndanswers: [],
       thinkingOf: "______",
       data: {},
+      loverightNow: false,
+      title:true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  questionsRendered() {
+    if (Object.keys(this.state.questionsAndanswers).length > 0) return true;
+  }
   componentDidMount() {
-    fetch("http://127.0.0.1:5000/questionnaire")
+    fetch(uri + "questionnaire")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -32,34 +39,37 @@ class LoveAndPain extends React.Component {
     this.setState({
       data: { ...this.state.data, [name]: parseInt(value) },
     });
-
-    if (e.target.name === "0" && e.target.id !== "I have never been in love.") {
-      this.setState({
-        thinkingOf: e.target.id
-          .toLowerCase()
-          .replace(".", "")
-          .replace("i", "I"),
-      });
-    }
     if (e.target.name === "0" && e.target.id === "I have never been in love.") {
-      this.setState({ thinkingOf: "someone important to me" });
+      this.setState({ data: {} });
+      History.push("/pain");
     }
+    if (e.target.name === "0" && e.target.id === "Someone I once loved.") {
+      this.setState({ loverightNow: true });
+    }
+    if (e.target.name === "0" && e.target.id === "Someone I love right now.") {
+      this.setState({ loverightNow: true });
+    }
+  };
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ thinkingOf: value });
   };
 
   allowSubmit() {
     if (
       Object.keys(this.state.data).length ===
-      Object.keys(this.state.questionsAndanswers).length
+      Object.keys(this.state.questionsAndanswers).length &&
+      Object.keys(this.state.questionsAndanswers).length > 0
     ) {
       return true;
     } else {
-      alert("Please answer all the questions before submitting");
+      return false;
     }
   }
   handleSubmit(event) {
     event.preventDefault();
     if (this.allowSubmit()) {
-      fetch("http://127.0.0.1:5000/results ", {
+      fetch(uri + "post_results", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -81,7 +91,11 @@ class LoveAndPain extends React.Component {
     return (
       <header className="container">
         <div>
-          <Title welcomeText={true} />
+          <Title welcomeText={this.state.title} />
+          <FirstLoveQuestionInput
+            isLove={this.state.loverightNow}
+            handle={this.handleInputChange}
+          />
           <ul className="ulremovebullets">
             {this.state.questionsAndanswers.map(({ question, answers }) => (
               <QuestionBox
@@ -90,12 +104,16 @@ class LoveAndPain extends React.Component {
                 data={this.state.data}
                 handle={this.handleChange}
                 thinkingOf={this.state.thinkingOf}
+                loverightNow={this.state.loverightNow}
               />
             ))}
           </ul>
+
           <SubmitButton
+            className="subbuttonformlap"
             handleSubmit={this.handleSubmit}
-            onClick={Results.fetchResults}
+            allowSubmit={this.allowSubmit()}
+            title={this.state.title}
           />
         </div>
       </header>
