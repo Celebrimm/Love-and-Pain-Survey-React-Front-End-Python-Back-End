@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "../components/Chart";
 import ResultInfo from "../components/ResultInfo";
-import uri from "../services/URI"
+import uri from "../services/URL"
 
 class Results extends React.Component {
   constructor(props) {

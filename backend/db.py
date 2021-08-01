@@ -11,7 +11,7 @@ import flask_sqlalchemy
 from sqlalchemy.pool import QueuePool
 
 # MySQL configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Airsoft9124!@localhost/pain_scale'
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'Your DB config'
 app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"pool_size": 10, "poolclass":QueuePool, "pool_pre_ping": True}

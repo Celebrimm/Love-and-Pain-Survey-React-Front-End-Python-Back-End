@@ -3,7 +3,7 @@ import QuestionBox from "../components/QuestionBox";
 import SubmitButton from "../components/SubmitButton";
 import Title from "../components/Title";
 import History from "../services/History";
-import uri from "../services/URI"
+import uri from "../services/URL"
 
 class Pain extends React.Component {
   constructor(props) {

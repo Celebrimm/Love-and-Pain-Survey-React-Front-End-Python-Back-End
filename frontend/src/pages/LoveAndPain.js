@@ -5,7 +5,7 @@ import Title from "../components/Title";
 import History from "../services/History";
 import FirstLoveQuestionInput from "../components/FirstLoveQuestionInput";
 
-import uri from "../services/URI";
+import uri from "../services/URL";
 
 class LoveAndPain extends React.Component {
   constructor(props) {
