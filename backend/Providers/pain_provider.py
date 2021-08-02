@@ -4,7 +4,7 @@ import jsonpickle
 from Shared.Models.ResponseModels.question import Question
 from Shared.Models.ResponseModels.answer import Answer
 from Shared.Models.ResponseModels.questionnaire import QuestionnaireSection
-
+from cache import pain_cache
 
 def get_pain():
     pain = []
@@ -26,5 +26,5 @@ def get_pain():
             questionnaire_section.answers.append(answer)
         questionnaire_section.question = question
         pain.append(questionnaire_section)
-        print(questionnaire_section)
+    pain_cache.memo = pain   
     return jsonpickle.encode(pain, unpicklable=False)

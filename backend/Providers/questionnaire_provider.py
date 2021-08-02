@@ -1,6 +1,6 @@
 from flask import jsonify
 import sys
-
+from cache import questionnaire_cache
 from Repositories import questions_repository
 from Repositories.answers_repository import *
 import jsonpickle
@@ -29,7 +29,9 @@ def get_questionnaire():
             questionnaire_section.answers.append(answer)
         questionnaire_section.question = question
         questionnaire.append(questionnaire_section)
-        print(questionnaire_section)
+        
 
+    questionnaire_cache.memo = questionnaire
 
     return jsonpickle.encode(questionnaire, unpicklable=False)
+

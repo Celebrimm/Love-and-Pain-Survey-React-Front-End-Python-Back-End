@@ -7,6 +7,7 @@ import Providers.result_provider as result_provider
 from Providers import questions_provider
 from Providers import questionnaire_provider
 from Providers import pain_provider
+from cache import *
 
 import os
 from db import db
@@ -43,11 +44,15 @@ def get_all_questions():
 
 @app.route('/questionnaire', methods=['GET'])
 def get_questionnaire():
-    return questionnaire_provider.get_questionnaire()
-
+    
+    if questionnaire_cache.size() == 0:
+        return questionnaire_provider.get_questionnaire()
+    return questionnaire_cache.send()
 @app.route('/get_pain', methods=['GET'])
 def get_pain():
-    return pain_provider.get_pain()
+    if pain_cache.size() == 0:
+        return pain_provider.get_pain()
+    return pain_cache.send()
 
 @app.route('/get_results', methods=['GET'])
 def get_results():
@@ -57,7 +62,6 @@ def get_results():
 if __name__ == "__main__":
     
     app.run()
-    
 
 
 
