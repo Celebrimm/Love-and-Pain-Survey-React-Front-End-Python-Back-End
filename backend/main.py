@@ -45,14 +45,14 @@ def get_all_questions():
 @app.route('/questionnaire', methods=['GET'])
 def get_questionnaire():
     
-    if questionnaire_cache.size() == 0:
-        return questionnaire_provider.get_questionnaire()
-    return questionnaire_cache.send()
+    
+    return questionnaire_provider.get_questionnaire()
+    
 @app.route('/get_pain', methods=['GET'])
 def get_pain():
-    if pain_cache.size() == 0:
-        return pain_provider.get_pain()
-    return pain_cache.send()
+    
+    return pain_provider.get_pain()
+    
 
 @app.route('/get_results', methods=['GET'])
 def get_results():

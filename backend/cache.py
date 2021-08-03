@@ -5,7 +5,7 @@ class Cache:
     def __init__(self):
         self.memo=[]
     
-    def size(self):
+    def __len__(self):
         return len(self.memo)
     def send(self):
         return jsonpickle.encode(self.memo, unpicklable=False)

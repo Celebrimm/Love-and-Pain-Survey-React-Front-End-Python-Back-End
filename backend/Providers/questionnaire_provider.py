@@ -10,6 +10,8 @@ from Shared.Models.ResponseModels.questionnaire import QuestionnaireSection
 
 
 def get_questionnaire():
+    if len(questionnaire_cache) > 0:
+        return questionnaire_cache.send()
     questionnaire = []
 
     all_questions = questions_repository.all_questions()

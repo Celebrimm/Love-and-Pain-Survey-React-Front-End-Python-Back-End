@@ -7,8 +7,10 @@ from Shared.Models.ResponseModels.questionnaire import QuestionnaireSection
 from cache import pain_cache
 
 def get_pain():
+    if len(pain_cache) > 0:
+        return pain_cache.send()
     pain = []
-
+    
     all_questions = questions_repository.all_questions()
     for i in range(15, len(all_questions)):
 
