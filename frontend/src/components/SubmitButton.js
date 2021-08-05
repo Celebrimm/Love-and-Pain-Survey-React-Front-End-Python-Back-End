@@ -1,5 +1,5 @@
 import React from "react";
-import "./SubmitButton.css";
+
 const SubmitButton = ({ handleSubmit, allowSubmit, title }) => {
   if (allowSubmit === true)
     return (
