@@ -51,7 +51,7 @@ class LoveAndPain extends React.Component {
     }
   };
   handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const {value } = e.target;
     this.setState({ thinkingOf: value });
   };
 
