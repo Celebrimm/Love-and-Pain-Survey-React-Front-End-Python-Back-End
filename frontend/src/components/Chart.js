@@ -12,7 +12,7 @@ import {
 
 const Chart = ({ data }) => {
   return (
-    <ResponsiveContainer className="App" width={400} height={400}>
+    <ResponsiveContainer className="App" width={275} height={400}>
       <BarChart
         className="App"
         width={225}
@@ -35,7 +35,7 @@ const Chart = ({ data }) => {
         <Tooltip />
         <Legend />
         <CartesianGrid strokeDasharray="3 3" />
-        <Bar dataKey="average" fill="#8884d8" background={{ fill: "#eee" }} />
+        <Bar dataKey="average" fill="#2b6777" background={{ fill: "#eee" }} />
       </BarChart>
     </ResponsiveContainer>
   );

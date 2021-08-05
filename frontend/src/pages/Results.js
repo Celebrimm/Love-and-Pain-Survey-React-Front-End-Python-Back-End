@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "../components/Chart";
 import ResultInfo from "../components/ResultInfo";
-import uri from "../services/URL"
+import uri from "../services/URI";
 
 class Results extends React.Component {
   constructor(props) {
@@ -31,15 +31,14 @@ class Results extends React.Component {
   render() {
     return (
       <>
-      <div class="font-effect-fire-animation">
-      <h1 className="title" > Results</h1>
-      </div>
-      
-      <div className="result-page" >
-        <Chart data={this.state.data} className="result-page"></Chart>
+        <div>
+          <h1 className="title"> Results</h1>
+        </div>
+
+        <div className="result-page">
+          <Chart data={this.state.data} className="result-page"></Chart>
         </div>
         <ResultInfo />
-      
       </>
     );
   }

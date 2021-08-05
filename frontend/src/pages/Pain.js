@@ -3,19 +3,18 @@ import QuestionBox from "../components/QuestionBox";
 import SubmitButton from "../components/SubmitButton";
 import Title from "../components/Title";
 import History from "../services/History";
-import uri from "../services/URL"
+import uri from "../services/URL";
 
 class Pain extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { questionsAndanswers: [], data: {}, title:false };
+    this.state = { questionsAndanswers: [], data: {}, title: false };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    
-    fetch(uri + 'get_pain')
+    fetch(uri + "get_pain")
       .then((res) => res.json())
       .then((result) => {
         this.setState({
@@ -35,11 +34,12 @@ class Pain extends React.Component {
   allowSubmit() {
     if (
       Object.keys(this.state.data).length ===
-      Object.keys(this.state.questionsAndanswers).length && Object.keys(this.state.questionsAndanswers).length>0
+        Object.keys(this.state.questionsAndanswers).length &&
+      Object.keys(this.state.questionsAndanswers).length > 0
     ) {
       return true;
     } else {
-      return false
+      return false;
     }
   }
   handleSubmit(event) {
@@ -68,7 +68,7 @@ class Pain extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="Appcontainer">
           <Title welcomeText={this.state.title} />
           <ul className="ulremovebullets">
             {this.state.questionsAndanswers.map(({ question, answers }) => (
@@ -80,11 +80,13 @@ class Pain extends React.Component {
               />
             ))}
           </ul>
-          
         </div>
-        <SubmitButton handleSubmit={this.handleSubmit} title={this.state.title}allowSubmit={this.allowSubmit()} />
+        <SubmitButton
+          handleSubmit={this.handleSubmit}
+          title={this.state.title}
+          allowSubmit={this.allowSubmit()}
+        />
       </div>
-      
     );
   }
 }

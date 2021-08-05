@@ -3,26 +3,43 @@
 @import url("https://fonts.googleapis.com/css?family=Yomogi");
 @import url("https://fonts.googleapis.com/css?family=Tourney");
 @import url("https://fonts.googleapis.com/css?family=Playfair Display");
-@import url("https://fonts.googleapis.com/css?family=Lato");
-@import url("https://fonts.googleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Fauna One");
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
 
 .App {
   margin: 0 auto;
   text-align: left;
   font-size: .75em;
   color: rgba(57, 16, 78, 0.925);
-
+  margin-top:20px
 
 }
 
 .thinkingof {
   text-align:left;
   position: center;
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.4em;
+  
   margin-bottom: 5px;
-  color: rgba(57, 16, 78, 0.925);
-  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-family: "Fauna One", sans-serif;
+  margin-left: 0px;
+  font-weight: lighter;
+  
+}
+.thinkingofcontainer{
+  
+
+
+    border: 1px solid #2b6777;
+    margin-top: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #2b6777;
+    border-radius: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
   
 }
 
@@ -31,7 +48,7 @@
   padding: 10px;
   top: 25px;
   background-color: rgb(245, 241, 240);
-  color: rgb(91, 44, 160);
+  color: #000000;
   width: 260px;
   left: px;
   right: 8px;
@@ -42,8 +59,10 @@
   transition: .7s ease;
   position: right;
   border-radius: 10px;
-  margin-left: 28px;
-  font-family: "Oswald";
+  margin-left: 4px;
+  font-family: "Fauna One";
+  
+  
 }
 
 
@@ -55,38 +74,44 @@
   align-items: left;
   justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: rgb(189, 60, 60);
+  color: #000000;
   text-align: center;
-  font-family: "Playfair Display";
+  font-family: "Fauna One";
+  position: relative;
+bottom: 20px;
+margin: 40px;
+margin-top: 60px
 
 }
 
 .submitfill {
-  background-color: #eb991e;
+  background-color: #c8d8e4;
   min-height: 2vh
 }
 
-.container {
-  background-color: #eb991e;
+.Appcontainer {
+  background-color: #c8d8e4;
   min-height: 100vh;
   border: none !important;
 
   font-size: calc(10px + 2vmin);
   color: rgb(224, 224, 224);
-  font-family: "Lato";
+  font-family: "Fauna One";
   margin-bottom: -25px;
   
 
 }
 
 .result-info {
-  font-size: .80em;
-  font-weight: bold;
+  font-size: .90em;
+  
   margin-bottom: 5px;
-  color: rgba(57, 16, 78, 0.925);
-  font-family: "Oswald", sans-serif;
-  margin: 0;
+  color: #000000;;
+  font-family: "Fauna One";
+  margin: 24px;
   padding: 0;
+  text-align: center;
+  
 
 }
 
@@ -95,7 +120,7 @@ result-page {
   font-weight: bold;
   margin-bottom: 5px;
   color: rgba(57, 16, 78, 0.925);
-  font-family: "Oswald", sans-serif;
+  
   margin: 0;
   padding: 0;
   position: static
@@ -108,35 +133,39 @@ result-page {
 
 .title {
   position: relative;
-  background-color: rgb(189, 60, 60);
-  color: rgb(255, 255, 255);
-  padding: 20px;
-  font-size: 1.8em;
-  text-align: center;
-
-  font-family: "Bilbo";
+    background-color: #2b6777;
+    color: rgb(255, 255, 255);
+    
+    font-size: 1.3em;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    font-family: "Cinzel";
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 
 }
 
 .question {
   font-size: 1.4em;
-  font-weight: bold;
+  ;
   margin-bottom: 5px;
-  color: rgba(57, 16, 78, 0.925);
-  font-family: "Oswald", sans-serif;
+  color: #ffffff;
+  font-family: "Fauna One", sans-serif;
+  
 
 }
 
 .questionBox {
 
 
-  border: 1px solid rgba(226, 56, 56, 0.699);
+  border: 1px solid #2b6777;
   margin-top: 15px;
   padding: 15px;
   box-sizing: border-box;
-  background-color: rgba(189, 60, 60);
+  background-color: #2b6777;
   border-radius: 10px;
-  margin-right: 40px
+  margin-right: 40px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
 }
 
 .answers {
@@ -191,22 +220,21 @@ result-page {
 }
 
 .subbtn {
-  position: bottom center;
-  font-size: 1.0em;
-  padding: 10px;
-  top: 350px;
-  background-color: rgb(139, 33, 18);
+  font-size: 1em;
+    padding: 25px;
+    top: 25px;
+    background-color: #52ab98;
   color: rgb(242, 240, 245);
-  width: 150px;
-  left: 0px;
-  right: 0px;
-  margin-top: -60px;
-  outline: none;
-  cursor: pointer;
-  font-family: "Playfair Display";
-  white-space: normal;
-  word-wrap: break-word;
-  border-radius: 10px;
+    width: 150px;
+    left: 0px;
+    right: 0px;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+    font-family: "Fauna One";
+    white-space: pre-line;
+    word-wrap: normal;
+    border-radius: 10px;
 }
 
 .subbuttonform {
@@ -214,19 +242,19 @@ result-page {
   font-size: 1.0em;
   padding: 5px;
   
-  
+  margin: auto;
   
   color: rgb(242, 240, 245);
   width: 150px;
-  left: 0px;
-  right: 0px;
-  margin: auto;
+  
+  position: static;
   
   cursor: pointer;
   font-family: "Playfair Display";
   
   
   margin-top : 24px;
+  
   
 
 }
@@ -245,6 +273,8 @@ result-page {
   
   cursor: pointer;
   font-family: "Playfair Display";
+  margin-left: auto;
+    margin-right: auto;
   
   
   margin-top : -24px;
@@ -263,63 +293,99 @@ font-family: "Bilbo"; */
 
 
 
+
 .glow-on-hover {
-    width: 220px;
+  width: 220px;
     height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: rgb(228, 14, 14);
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 100px;
+  font-family: "Fauna One", system-ui;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  align-items: center
+  
+  
 }
 
 .glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, hsl(0, 92%, 48%), #eccb0c, hsl(0, 92%, 48%), #eccb0c, hsl(0, 92%, 48%), #eccb0c, hsl(0, 92%, 48%), #eccb0c, hsl(0, 92%, 48%));
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+  content: '';
+  background: linear-gradient(45deg, #ffffff, #c8d8e4, #ffffff, #c8d8e4, #ffffff, #c8d8e4, #ffffff, #c8d8e4, #ffffff);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 100px;
 }
 
 .glow-on-hover:active {
-    color: rgb(231, 27, 27)
+  color: #52ab98
 }
 
 .glow-on-hover:active:after {
-    background: transparent;
+  background: transparent;
 }
 
 .glow-on-hover:hover:before {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(145, 23, 23);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #52ab98;
+  left: 0;
+  top: 0;
+  border-radius: 100px;
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
 };
 
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+input[type='radio']:checked:after {
+  width: 12px;
+  height: 12px;
+  border-radius: 11px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #52ab98;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}

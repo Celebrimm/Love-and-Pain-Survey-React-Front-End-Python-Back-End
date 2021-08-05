@@ -15,7 +15,7 @@ class LoveAndPain extends React.Component {
       thinkingOf: "______",
       data: {},
       loverightNow: false,
-      title:true
+      title: true,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,7 +58,7 @@ class LoveAndPain extends React.Component {
   allowSubmit() {
     if (
       Object.keys(this.state.data).length ===
-      Object.keys(this.state.questionsAndanswers).length &&
+        Object.keys(this.state.questionsAndanswers).length &&
       Object.keys(this.state.questionsAndanswers).length > 0
     ) {
       return true;
@@ -89,8 +89,8 @@ class LoveAndPain extends React.Component {
 
   render() {
     return (
-      <header className="container">
-        <div>
+      <div>
+        <div className="Appcontainer">
           <Title welcomeText={this.state.title} />
           <FirstLoveQuestionInput
             isLove={this.state.loverightNow}
@@ -108,15 +108,14 @@ class LoveAndPain extends React.Component {
               />
             ))}
           </ul>
-
-          <SubmitButton
-            className="subbuttonformlap"
-            handleSubmit={this.handleSubmit}
-            allowSubmit={this.allowSubmit()}
-            title={this.state.title}
-          />
         </div>
-      </header>
+        <SubmitButton
+          className="subbuttonformlap"
+          handleSubmit={this.handleSubmit}
+          allowSubmit={this.allowSubmit()}
+          title={this.state.title}
+        />
+      </div>
     );
   }
 }

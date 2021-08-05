@@ -1,8 +1,6 @@
 import React from "react";
 
-
-const QuestionBox = ({ question, answers, data, handle, thinkingOf}) => {
-  
+const QuestionBox = ({ question, answers, data, handle, thinkingOf }) => {
   return (
     <div className="questionBox">
       <li key={question.question_id}>
@@ -35,4 +33,3 @@ const QuestionBox = ({ question, answers, data, handle, thinkingOf}) => {
 };
 
 export default QuestionBox;
-

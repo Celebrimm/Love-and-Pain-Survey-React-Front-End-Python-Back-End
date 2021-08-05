@@ -7,17 +7,27 @@
 
 
 
-  font-family: "Bilbo"
+  font-family: "Fauna One"
 }
 
 .Navcontainer {
   margin-right: center;
   position: relative;
-  background-color: #eb991e;
-  color: rgb(255, 255, 255);
-  padding: .0001px;
-  font-size: 1.8em;
+  background-color: #c8d8e4;
+  color: #2b6777;
+  padding: 3px;
+  font-size: .7em;
   text-align: center;
+  font-family: "Fauna One", sans-serif;
+  bottom: 0px
+}
 
+.Navcontainer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
 
+a:visited {
+  text-decoration: none;
+  color: rgb(8, 8, 1);
 }
