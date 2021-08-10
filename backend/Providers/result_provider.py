@@ -12,7 +12,7 @@ def post_results(json):
     version = ''
 
     average = 0
-    nums_with_values = 0
+    answers_with_values = 0
     result_id = result_repository.insert_result_id()
     for question_id, answer_id in answer_ids.items():
         if not version:
@@ -23,9 +23,9 @@ def post_results(json):
         result_answer_repository.insert_result_answers(result_id, answer_id)
         for a in answers_repository.get_answer_value_by_answer_id(answer_id):
             if a.value != 0:
-                nums_with_values += 1
+                answers_with_values += 1
                 average += a.value
-    average /= nums_with_values
+    average /= answers_with_values
 
     result_repository.update_average(average, result_id, version)
     return True
@@ -33,11 +33,11 @@ def post_results(json):
 
 def get_results_for_graph():
     all_results = result_repository.get_results()
-    g_results = []
+    graph_results = []
     pain_graph_results = GraphResults()
     pain_graph_results.version = "Pain"
     love_and_pain_graph_results = GraphResults()
-    love_and_pain_graph_results.version = "Love and Pain"
+    love_and_pain_graph_results.version = "Love"
 
     pain_graph_results.average = result_repository.get_average_by_version(
         pain_graph_results.version)
@@ -46,6 +46,6 @@ def get_results_for_graph():
         result_repository.get_average_by_version(
             love_and_pain_graph_results.version)
 
-    g_results.append(pain_graph_results)
-    g_results.append(love_and_pain_graph_results)
-    return jsonpickle.encode(g_results, unpicklable=False)
+    graph_results.append(pain_graph_results)
+    graph_results.append(love_and_pain_graph_results)
+    return jsonpickle.encode(graph_results, unpicklable=False)

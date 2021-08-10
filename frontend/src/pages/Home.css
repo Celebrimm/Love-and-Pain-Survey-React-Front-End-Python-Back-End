@@ -5,7 +5,6 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair Display");
 @import url("https://fonts.googleapis.com/css?family=Lato");
 @import url("https://fonts.googleapis.com/css?family=Oswald");
-
 .Home .lander {
     padding: 80px 0;
     text-align: center;
@@ -19,51 +18,48 @@
 .lander p {
     color: #999;
 }
-
-.Homecontainer {
+.Homecontainer{
     position: relative;
     background-color: rgb(189, 60, 60);
     color: rgb(255, 255, 255);
     padding: 140px;
     font-size: 1.8em;
-
-
+    
+  
     font-family: "Cinzel";
 }
-
-.Homewelcome {
+.Homewelcome{
     position: relative;
     background-color: #2b6777;
     color: rgb(255, 255, 255);
-
+    
     font-size: 1.3em;
     text-align: center;
     padding: 50px;
     margin: auto;
     font-family: "Cinzel";
-    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
-
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    
 }
-
-.Homechoose {
+.Homechoose{
     position: relative;
-
+    
     color: rgb(255, 255, 255);
-
+    
     font-size: 1.3em;
     text-align: center;
     padding: 50px;
-
+  
     font-family: "Fauna One";
 
 }
 
-.painbutton {
+.painbutton{
     font-size: .50em;
     padding: 25px;
     top: 70px;
     background-color: #52ab98;
-    color: rgb(242, 240, 245);
+  color: rgb(242, 240, 245);
     width: 150px;
     left: 0px;
     right: 0px;
@@ -73,16 +69,15 @@
     font-family: "Fauna One";
     white-space: normal;
     word-wrap: break-word;
-
+    
 
 }
-
-.loveandpainbutton {
+.loveandpainbutton{
     font-size: .50em;
     padding: 25px;
     top: 25px;
     background-color: #52ab98;
-    color: rgb(242, 240, 245);
+  color: rgb(242, 240, 245);
     width: 150px;
     left: 0px;
     right: 0px;
@@ -95,16 +90,16 @@
     border-radius: 10px;
 
 }
-
-.loveandpainbuttonpos {
-    position: static;
+.loveandpainbuttonpos{
+    position:static;
     transition: .5s ease;
-    margin-top: 25px
+    margin-top : 25px
+    
+}
+.painbuttonpos{
+    position:right;
+    transition: .5s ease;
+    
+
 }
 
-.painbuttonpos {
-    position: right;
-    transition: .5s ease;
-
-
-}

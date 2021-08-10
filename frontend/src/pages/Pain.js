@@ -64,7 +64,7 @@ class Pain extends React.Component {
   }
 
   render() {
-    // const { questionsAndanswers } = this.state;
+    
 
     return (
       <div>
