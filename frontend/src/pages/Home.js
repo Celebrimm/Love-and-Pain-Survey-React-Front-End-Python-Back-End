@@ -24,7 +24,7 @@ class Home extends React.Component {
             className="glow-on-hover"
             onClick={() => History.push("/love-and-pain")}
           >
-            Love and Pain
+            Love
           </Button>
         </form>
       </div>

@@ -3,7 +3,7 @@ import QuestionBox from "../components/QuestionBox";
 import SubmitButton from "../components/SubmitButton";
 import Title from "../components/Title";
 import History from "../services/History";
-import FirstLoveQuestionInput from "../components/FirstLoveQuestionInput";
+
 
 import uri from "../services/URL";
 
@@ -15,7 +15,7 @@ class LoveAndPain extends React.Component {
       thinkingOf: "______",
       data: {},
       loverightNow: false,
-      title: true,
+      title:true
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,15 +23,20 @@ class LoveAndPain extends React.Component {
   questionsRendered() {
     if (Object.keys(this.state.questionsAndanswers).length > 0) return true;
   }
+  
   componentDidMount() {
+    
     fetch(uri + "questionnaire")
       .then((res) => res.json())
       .then((result) => {
+        
         this.setState({
           questionsAndanswers: result,
         });
       });
-  }
+    }
+  
+
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,25 +45,32 @@ class LoveAndPain extends React.Component {
       data: { ...this.state.data, [name]: parseInt(value) },
     });
     if (e.target.name === "0" && e.target.id === "I have never been in love.") {
-      this.setState({ data: {} });
+      this.setState({ data: {} })
       History.push("/pain");
+      alert('You are being redirected to the Pain survey')
     }
     if (e.target.name === "0" && e.target.id === "Someone I once loved.") {
       this.setState({ loverightNow: true });
+      this.handleInputChange()
+
     }
     if (e.target.name === "0" && e.target.id === "Someone I love right now.") {
       this.setState({ loverightNow: true });
+      this.handleInputChange()
     }
   };
   handleInputChange = (e) => {
-    const {value } = e.target;
-    this.setState({ thinkingOf: value });
+    const thinkingOf = prompt('Please enter the name of the person you are thinking of.')
+   if (thinkingOf ===null){return (this.handleInputChange())}
+   else if (thinkingOf.length===0){return(this.handleInputChange())}
+   else{return(this.setState({ thinkingOf:thinkingOf}))}
+    
   };
 
   allowSubmit() {
     if (
       Object.keys(this.state.data).length ===
-        Object.keys(this.state.questionsAndanswers).length &&
+      Object.keys(this.state.questionsAndanswers).length &&
       Object.keys(this.state.questionsAndanswers).length > 0
     ) {
       return true;
@@ -85,17 +97,22 @@ class LoveAndPain extends React.Component {
         });
       this.setState({ data: {} });
     }
+  
+  
   }
+  
 
   render() {
     return (
-      <div>
+      <div >
+        
         <div className="Appcontainer">
           <Title welcomeText={this.state.title} />
-          <FirstLoveQuestionInput
+          {/* <FirstLoveQuestionInput
             isLove={this.state.loverightNow}
             handle={this.handleInputChange}
-          />
+          /> */}
+          
           <ul className="ulremovebullets">
             {this.state.questionsAndanswers.map(({ question, answers }) => (
               <QuestionBox
@@ -108,13 +125,15 @@ class LoveAndPain extends React.Component {
               />
             ))}
           </ul>
-        </div>
+          
+          
+        </div >
         <SubmitButton
-          className="subbuttonformlap"
-          handleSubmit={this.handleSubmit}
-          allowSubmit={this.allowSubmit()}
-          title={this.state.title}
-        />
+            className="subbuttonformlap"
+            handleSubmit={this.handleSubmit}
+            allowSubmit={this.allowSubmit()}
+            title={this.state.title}
+          />
       </div>
     );
   }
