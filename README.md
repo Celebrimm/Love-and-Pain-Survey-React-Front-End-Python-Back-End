@@ -8,9 +8,6 @@ Created a full-stack web application to process data for an experimental questio
 
 2. Run main.py
 
-   
-                                        
-
 ### port: http://127.0.0.1:8000/
 
 ### run command: Run main.py
@@ -18,6 +15,8 @@ Created a full-stack web application to process data for an experimental questio
 ### install command: `pip install -r requirements.txt`
 
 ### language: Python(Flask)
+
+### Database: MySQL
 
 ## Available Scripts For Client
 
