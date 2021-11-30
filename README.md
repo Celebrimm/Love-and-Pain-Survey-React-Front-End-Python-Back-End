@@ -23,6 +23,10 @@ Created a full-stack web application to process data for an experimental questio
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install all modules listed as dependencies in package.json.
+
 ### `npm start`
 
 Runs the app in the development mode.\
