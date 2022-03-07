@@ -1,5 +1,5 @@
 # Love-and-Pain-Experiment
-Created a full-stack web application to process data for an experimental questionnaire. The questions, possible answers, and user input is stored in a MySQL database. Developed a Flask ReST API used to query and manipulate the data. The front-end library used to present the survey is React.js. Upon completion, a chart is displayed which is meant to prove a psychological theory.
+Created a full-stack web application to process data for an experimental questionnaire. The client was created with React.js, the REST API with Python (Flask), and questions, possible answers, and user input are stored in and queried from a MySQL (SQL) database. Upon completion, a chart is displayed which is meant to prove a psychological theory. Deployed using Heroku.
 
 ## Available Scripts for Server
 
